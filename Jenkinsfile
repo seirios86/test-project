@@ -27,7 +27,7 @@ pipeline {
     
     stage('Publish') {
       steps {
-        withDockerRegistry([credentialsId: 'harvey-dockerhub', url: '']) {
+        withDockerRegistry([credentialsId: 'harvey-dockerhub']) {
           sh 'docker push seirios86/test-project'
         }
       }
