@@ -24,6 +24,11 @@ pipeline {
         sh 'docker build -t test-project .'
       }
     }
-
+    
+    stage('Publish') {
+      withDockerRegistry([credentialsId: 'harvey-dockerhub', url: '']) {
+            sh 'docker push seirios86/test-project'
+      }
+    }
   }
 }
