@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Image Build') {
+      steps {
+        sh 'docker build -t test-project .'
+      }
+    }
+
   }
 }
