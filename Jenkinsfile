@@ -7,9 +7,15 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        echo 'test success'
+      }
+    }
+
     stage('Build') {
       steps {
-        tool 'maven'
+        sh './mvnw clean compile package -DskipTests'
       }
     }
 
